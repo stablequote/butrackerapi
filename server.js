@@ -44,7 +44,7 @@ mongoose.connect(process.env.MONGODB_URI)
 
 // routes
 app.get('/', (req, res) => {
-    res.send('Back end')
+    res.send('API is working...')
 })
 
 // auth
