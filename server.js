@@ -12,7 +12,7 @@ const userRoutes = require('./routes/user.routes');
 const issueRoutes = require('./routes/issue.routes');
 const projectRoutes = require('./routes/project.routes');
 
-let port = process.env.PORT
+let port = process.env.PORT || 8080
 
 // middleware
 app.use(express.urlencoded({ extended: true }));
@@ -52,6 +52,6 @@ app.get('/', (req, res) => {
 //     res.send(req.oidc.isAuthenticated() ? 'Logged in' : res.redirect('/login'));
 // });
 
-app.listen(port || 5000, () => {
+app.listen(port, () => {
     console.log(`Server running on ${port}`);
 })
