@@ -47,6 +47,16 @@ app.get('/', (req, res) => {
     res.send('API is working...')
 })
 
+// mongoose connection
+mongoose.connect(process.env.MONGODB_URI)
+.then(() => {
+    console.log('Conncted to DB!');
+})
+.catch(err => {
+    console.log('Could not connect to the database');
+    console.log(err);
+})
+
 // auth
 // app.get('/private', (req, res) => {
 //     res.send(req.oidc.isAuthenticated() ? 'Logged in' : res.redirect('/login'));
